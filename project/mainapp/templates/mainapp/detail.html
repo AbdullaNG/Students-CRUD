@@ -1,0 +1,48 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="shortcut icon" href="/media/images/students.png" type="image/x-icon">
+	<title>Student Detail</title>
+</head>
+<body class="bg-dark">
+	<header class="navbar navbar-expand-md navbar-light bg-success">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'home' %}">
+				<div class="d-flex btn btn-dark">
+					<img src="/media/images/people.png" class="w-50 h-50 mt-1 me-2">
+					<h4>Students CRUD</h4>
+				</div>
+			</a>
+			<a class="nav-item btn btn-dark" href="/admin"><h4>Admin Panel</h4></a>
+		</div>
+	</header>
+
+	<div class="row g-0">
+		<div class="col"></div>
+		<div class="col-8">
+			<div class="container-fluid rounded bg-secondary p-2 mt-3">
+				<div class="container-fluid border border-dark border-3 rounded p-2 mt-3">
+					<div class="mb-2 d-flex">
+						<h4>{{ student.fullname }}</h4>
+					</div>
+					<h6>Age:  {{ student.age }}</h6>
+					<h6>Email:  {{ student.email }}</h6>
+					<h6>College:  {{ student.college }}</h6>
+					<h6>Major:  {{ student.major }}</h6>
+					<h6>Year:  {{ student.year }}</h6>
+					<h6>Info:  </h6>
+					<p>{{ student.info }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

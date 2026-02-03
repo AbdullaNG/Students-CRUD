@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-&%i7cif!8b@@5pn($mg((&du%jv5*ydo4_hzz=ub_9yh4_w6u+'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -20,9 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'mainapp',
 	'crispy_forms',
-	'crispy_bootstrap5'
+	'crispy_bootstrap5',
+	'rest_framework',
+	'mainapp',
 ]
 
 MIDDLEWARE = [

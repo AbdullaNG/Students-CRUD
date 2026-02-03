@@ -3,6 +3,8 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView, DeleteView
 from .forms import StudentForm
 from .models import Student
+from rest_framework import generics
+from .serializers import StudentSerializer
 
 
 def home(request):
@@ -36,3 +38,28 @@ class StudentUpdate(UpdateView):
 class StudentDelete(DeleteView):
 	model = Student
 	success_url = reverse_lazy('home')
+
+
+class StudentsAPIView(generics.ListAPIView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+
+
+class StudentCreateAPIView(generics.CreateAPIView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+
+
+class StudentDetailAPIView(generics.RetrieveAPIView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+
+
+class StudentUpdateAPIView(generics.UpdateAPIView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+
+
+class StudentDeleteAPIView(generics.DestroyAPIView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
